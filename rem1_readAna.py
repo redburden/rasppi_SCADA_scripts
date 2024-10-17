@@ -26,7 +26,7 @@ while True:
         samples.appendleft(reading)
 
         reading = sum(samples) / len(samples)
-        reading /= 450
+        reading /= 430
         reading = round(reading, 2)
         reading *= 100
 
