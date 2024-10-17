@@ -27,7 +27,14 @@ while True:
         samples.appendleft(reading)
 
         reading = sum(samples) / len(samples)
+        reading /= 450
+        reading = round(reading, 2)
+        reading *= 100
 
+        if reading > 100:
+            reading = 100
+        else:
+            reading = int(reading)
         f = open("ana_value.txt", "w")
         f.write(str(reading))
         f.close()
