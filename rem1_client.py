@@ -15,7 +15,7 @@ GPIO.setup(26, GPIO.OUT)
 from pyModbusTCP.client import ModbusClient
 
 # init modbus client
-c = ModbusClient(host='100.107.41.3', port=502, auto_open=True)
+c = ModbusClient(host='100.107.143.47', port=502, auto_open=True)
 m1_speed = 0
 m1_hand_speed = 0
 pulse_time = 0
@@ -87,10 +87,7 @@ while True:
                     m1_proc()
         else:
             if p.is_alive() == True:
-                p.terminate()
-
-
-            
+                p.terminate()            
         
     else:
         print('unable to read coils')
