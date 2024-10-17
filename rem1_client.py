@@ -20,12 +20,11 @@ m1_speed = 0
 m1_hand_speed = 0
 
 
-def run_M1(speed):
+def run_M1(pulse_time):
     while True:
-        if coils_l[10] == True and m1_speed > 0:
-            GPIO.output(26,GPIO.HIGH)
-            time.sleep(speed)
-            GPIO.output(26,GPIO.LOW)
+        GPIO.output(26,GPIO.HIGH)
+        time.sleep(pulse_time)
+        GPIO.output(26,GPIO.LOW)
 
 def m1_proc():
     if p.is_alive() == True:
@@ -70,13 +69,13 @@ while True:
         if coils_l[10] == True:
             if coils_l[11] == False:
                 # Test if m1_remote_speed is different from m1_speed by more than 5
-                if abs(m1_remote_speed - m1_speed) > 5:
+                if abs(m1_remote_speed - m1_speed) > 1:
                     m1_speed = m1_remote_speed
+                    m1_proc()
             else:
-                if abs(m1_hand_speed - m1_speed) > 5:
+                if abs(m1_hand_speed - m1_speed) > 1:
                     m1_speed = m1_hand_speed
-                        
-            
+                    m1_proc()
         else:
             if p.is_alive() == True:
                 p.terminate()
