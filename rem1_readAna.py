@@ -22,7 +22,7 @@ while True:
             reading += 1
         # Keep a moving average based on the last 10 readings
         # Write that moving average to ana_value.txt
-
+        print("raw value = " + str(reading))
         reading /= 430
         reading = round(reading, 2)
         reading *= 100
