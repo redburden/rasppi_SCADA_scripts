@@ -22,13 +22,16 @@ while True:
             reading += 1
         # Keep a moving average based on the last 10 readings
         # Write that moving average to ana_value.txt
+
+        reading /= 430
+        reading = round(reading, 2)
+        reading *= 100
+
         samples.pop()
         samples.appendleft(reading)
 
         reading = sum(samples) / len(samples)
-        reading /= 430
-        reading = round(reading, 2)
-        reading *= 100
+        
 
         if reading > 100:
             reading = 100
