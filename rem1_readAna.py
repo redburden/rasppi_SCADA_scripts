@@ -4,7 +4,7 @@ from digitalio import DigitalInOut, Direction
 from collections import deque
 
 RCpin = board.D18
-samples = deque([0]*10)
+samples = deque([0]*1000)
 
 while True:
     with DigitalInOut(RCpin) as rc:
@@ -13,8 +13,6 @@ while True:
         # setup pin as output and direction low value
         rc.direction = Direction.OUTPUT
         rc.value = False
-
-        time.sleep(0.1)
 
         # setup pin as input and wait for low value
         rc.direction = Direction.INPUT
