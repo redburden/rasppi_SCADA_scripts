@@ -42,7 +42,7 @@ while True:
     coils_l = c.read_coils(0, 10)
     c.write_single_register(3, m1_speed)
     m1_remote_speed = c.read_holding_registers(0, 1)
-    p = Process(target=run_M1, args=(pulse_time))
+    p = Process(target=run_M1, args=(pulse_time,))
 
     try:
         # Read an analog value written to ana_val.txt
