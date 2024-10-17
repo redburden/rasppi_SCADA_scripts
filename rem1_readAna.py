@@ -20,7 +20,6 @@ while True:
         # This takes about 1 millisecond per loop cycle
         while rc.value is False:
             reading += 1
-        print(reading)
         # Keep a moving average based on the last 10 readings
         # Write that moving average to ana_value.txt
         samples.pop()
@@ -35,6 +34,7 @@ while True:
             reading = 100
         else:
             reading = int(reading)
+        print(reading)
         f = open("ana_value.txt", "w")
         f.write(str(reading))
         f.close()
