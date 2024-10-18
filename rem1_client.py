@@ -37,6 +37,7 @@ def m1_proc():
         p.join()
 
 # main read loop
+printcount = 0
 while True:
     # read 10 bits (= coils) at address 0, store result in coils list
     coils_l = c.read_coils(0, 15)
@@ -89,7 +90,9 @@ while True:
             GPIO.output(26,GPIO.LOW)
             if p.is_alive() == True:
                 p.terminate()            
-        print(coils_l[10], coils_l[11], m1_speed, m1_remote_speed, m1_hand_speed)       
+        print(printcount)
+        print(coils_l[10], coils_l[11], m1_speed, m1_remote_speed, m1_hand_speed)
+        printcount += 1       
     else:
         print('unable to read coils')
 
