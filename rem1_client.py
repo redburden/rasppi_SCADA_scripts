@@ -69,6 +69,7 @@ while True:
         else:
             GPIO.output(27,GPIO.LOW)
         if coils_l[10] == True:
+            print(coils_l[10], coils_l[11], m1_speed, m1_remote_speed, m1_hand_speed)
             if coils_l[11] == False:
                 # Test if m1_remote_speed is different from m1_speed by more than 5
                 if m1_remote_speed == 0:
