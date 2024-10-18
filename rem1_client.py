@@ -31,10 +31,10 @@ def m1_proc():
     if p.is_alive() == True:
         p.terminate()
         p.start()
-        p.join()
+        #p.join()
     else:
         p.start()
-        p.join()
+        #p.join()
 
 # main read loop
 printcount = 0
