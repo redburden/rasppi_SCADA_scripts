@@ -92,6 +92,7 @@ if __name__ == '__main__':
                             p.start()
                             p.join()
             else:
+                m1_speed = 0
                 print("Motor is being told to stop.")                
                 GPIO.output(26,GPIO.LOW)
                 while not m1_q.empty():
