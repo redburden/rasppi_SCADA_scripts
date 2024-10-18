@@ -95,6 +95,7 @@ while True:
             if p.is_alive() == True:
                 p.join()
                 p.kill()            
+            print(str(p.is_alive()))
     else:
         print('unable to read coils')
 
