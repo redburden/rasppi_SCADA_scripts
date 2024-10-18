@@ -89,7 +89,7 @@ while True:
             GPIO.output(26,GPIO.LOW)
             if p.is_alive() == True:
                 p.terminate()            
-        
+        print(coils_l[10], coils_l[11], m1_speed, m1_remote_speed, m1_hand_speed)       
     else:
         print('unable to read coils')
 
