@@ -86,8 +86,8 @@ while True:
                     0.004 + (100/m1_speed) * 0.001
                     m1_proc()
         else:
+            GPIO.output(26,GPIO.LOW)
             if p.is_alive() == True:
-                GPIO.output(26,GPIO.LOW)
                 p.terminate()            
         
     else:
