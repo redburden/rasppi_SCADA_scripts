@@ -28,6 +28,7 @@ def run_M1(pulse_time):
         GPIO.output(26,GPIO.LOW)
 
 def m1_proc():
+    print("Motor is being told to run.")
     if p.is_alive() == True:
         p.join()
         p.terminate()
@@ -88,6 +89,8 @@ while True:
                     0.004 + (100/m1_speed) * 0.001
                     m1_proc()
         else:
+            print("Motor is being told to stop.")
+            p.kill()
             GPIO.output(26,GPIO.LOW)
             if p.is_alive() == True:
                 p.join()
