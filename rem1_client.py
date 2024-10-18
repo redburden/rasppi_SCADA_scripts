@@ -87,6 +87,7 @@ while True:
                     m1_proc()
         else:
             if p.is_alive() == True:
+                GPIO.output(26,GPIO.LOW)
                 p.terminate()            
         
     else:
