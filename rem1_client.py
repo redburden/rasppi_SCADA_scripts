@@ -29,12 +29,11 @@ def run_M1(pulse_time):
 
 def m1_proc():
     if p.is_alive() == True:
+        p.join()
         p.terminate()
         p.start()
-        #p.join()
     else:
         p.start()
-        #p.join()
 
 # main read loop
 while True:
@@ -73,6 +72,7 @@ while True:
                 # Test if m1_remote_speed is different from m1_speed by more than 5
                 if m1_remote_speed == 0:
                     if p.is_alive() == True:
+                        p.join()
                         p.terminate()
                 elif abs(m1_remote_speed - m1_speed) > 1:
                     m1_speed = m1_remote_speed
@@ -81,6 +81,7 @@ while True:
             else:
                 if m1_hand_speed == 0:
                     if p.is_alive() == True:
+                        p.join()
                         p.terminate()
                 elif abs(m1_hand_speed - m1_speed) > 1:
                     m1_speed = m1_hand_speed
@@ -89,6 +90,7 @@ while True:
         else:
             GPIO.output(26,GPIO.LOW)
             if p.is_alive() == True:
+                p.join()
                 p.terminate()            
     else:
         print('unable to read coils')
