@@ -90,11 +90,11 @@ while True:
                     m1_proc()
         else:
             print("Motor is being told to stop.")
-            p.kill()
+            
             GPIO.output(26,GPIO.LOW)
             if p.is_alive() == True:
                 p.join()
-                p.terminate()            
+                p.kill()            
     else:
         print('unable to read coils')
 
