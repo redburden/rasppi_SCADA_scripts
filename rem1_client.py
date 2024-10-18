@@ -47,9 +47,9 @@ while True:
     try:
         # Read an analog value written to ana_val.txt
         with open('ana_val.txt', 'r') as f:
-            m1_speed = int(f.read())
+            m1_hand_speed = int(f.read())
     except:
-        m1_speed = 0
+        m1_hand_speed = 0
     else:
         f.close()
 
