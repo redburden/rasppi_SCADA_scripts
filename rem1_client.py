@@ -12,7 +12,7 @@ GPIO.setup(17, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
 GPIO.setup(26, GPIO.OUT)
 
-from pyModbusTCP.client import ModbusClient
+from pyModbusTCP.client import ModbusClient # test commit from rem1
 
 def run_M1(pulse_time, m1_command):
     while True:
