@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/remote1/rasppi_SCADA_scripts"
+set -gx VIRTUAL_ENV "/home/scada_remote_node_2/rasppi_SCADA_scripts"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

@@ -1,4 +1,4 @@
-#!/home/remote1/rasppi_SCADA_scripts/bin/python3
+#!/home/scada_remote_node_2/rasppi_SCADA_scripts/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
