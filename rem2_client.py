@@ -14,8 +14,10 @@ GPIO.setup(22, GPIO.OUT)
 from pyModbusTCP.client import ModbusClient
 
 
-def read_regs():
+def read_regs():    
     # main read loop
+    while True:
+        coils_l = c.read_coils(0, 15)
         # if success display registers
         if coils_l:
             if coils_l[0] == True:
